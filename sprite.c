@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct sprite {
     int x;
@@ -6,6 +7,7 @@ typedef struct sprite {
     int size;
     int width;
     char* img;
+    bool delete;
     struct sprite* next;
 } sprite;
 
@@ -17,6 +19,7 @@ sprite* newSprite(int x,int y,int size,int width,char* img){
         a->size=size;
         a->width=width;
         a->img=img;
+        a->delete=false;
         a->next=NULL;
     }
     return a;
